@@ -1,12 +1,12 @@
 # Ex02 Django ORM Web Application
-## Date: 21.04.2025
+## Date: 27/10/2024
 
 ## AIM
-To develop a Django application to store and retrieve data from a Movies Database using Object Relational Mapping(ORM).
+To develop a Django application to store and retrieve data from a bank loan database using Object Relational Mapping(ORM).
 
 ## ENTITY RELATIONSHIP DIAGRAM
+![alt text](image.png)
 
-![image](https://github.com/user-attachments/assets/77c03f53-bb82-4ca2-bcf1-97dc92368408)
 
 
 ## DESIGN STEPS
@@ -24,34 +24,34 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
+
 ```
-model.py
+models.py
+
 from django.db import models
 from django.contrib import admin
-class bankloan(models.Model):
+class bank(models.Model):
 	Name=models.CharField(max_length=10)
-	Accountno=models.IntegerField(primary_key="Accountno")
-	Interest=models.FloatField()
-	Startdate=models.DateField()
-	Email=models.EmailField()
-	Mobilenumber=models.IntegerField()
-	Amount=models.IntegerField()
-	Enddate=models.DateField()
-
-class bankloanAdmin(admin.ModelAdmin):
-	list_display=('Name','Accountno','Interest','Startdate','Email','Mobilenumber','Amount','Enddate')
+	Accno=models.IntegerField(primary_key="Accno")
+	Amount=models.FloatField()
+	interest=models.FloatField()
+	duedate=models.DateField()
+class bankAdmin(admin.ModelAdmin):
+	list_display=('Name','Accno','Amount','interest','duedate')
 
 admin.py
- from django.contrib import admin
-from .models import bankloan,bankloanAdmin
-admin.site.register(bankloan,bankloanAdmin)
 
+from django.contrib import admin
+from.models import bank,bankAdmin
+admin.site.register(bank,bankAdmin)
 ```
+
+
+
 ## OUTPUT
 
 
-![318910514-9684c294-fc42-4095-adf2-660dcdb62c6a](https://github.com/user-attachments/assets/32258f76-100f-4f56-8791-a1eb6a56a08d)
-
+![alt text](<Screenshot (2).png>)
 
 ## RESULT
-Thus the program for creating movies database using ORM hass been executed successfully
+Thus the program for creating a database using ORM hass been executed successfully
